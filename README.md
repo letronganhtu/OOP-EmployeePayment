@@ -200,7 +200,7 @@ Class that convert one `integer` into a `string` that represent currency
 - Output is a `string` that use `,` for thousand seperator and use `$` for currency
 
 ``` c++
-// // You can see implementation in "IntegerToCurrencyUIConverter.cpp"
+// You can see implementation in "IntegerToCurrencyUIConverter.cpp"
 class IntegerToCurrencyUIConverter {
 private:
     string _thousandSeparator = ",";
@@ -214,6 +214,6 @@ When you run the project, you must take text file name `November2021.txt` into t
 
 With using `inline` in `inline static shared_ptr<EmployeeDataReader> _instance = NULL;`, you must set C++ Language Standard into `ISO C++ 17`
 
-Link video demo:
+Link video demo: https://youtu.be/Kh-pDY8_HYQ
 
 Expect grade in project 2: 10
