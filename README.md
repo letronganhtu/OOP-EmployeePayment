@@ -8,11 +8,11 @@ Name: Le Trong Anh Tu
 
 Class to represent what one `Employee` is
 
-- Each `Employee` has their `name`
+- Each `Employee` has their `name` save as `string`
 
 - We use `clone()` function for *prototype* design pattern, it is implemented in exact type of `Employee` (will be explained later)
 
-- Function to calculate final payment for each `Employee`
+- Function to calculate the final payment for each `Employee`
 
 ``` c++
 // You can see implementation in "Employee.cpp"
@@ -34,9 +34,9 @@ public:
 
 Four classes can be known as four types of `Employee` in this project - `DailyEmployee`, `HourlyEmployee`, `ProductEmployee` and `Manager`
 
-- 4 classed I listed above are children class of `Employee` (You can see class diagram) &rarr; Implement `clone()` and `finalPayment()` clearly
+- 4 classes I listed above are children class of `Employee` (You can see class diagram in `Document` folder) &rarr; Implement `clone()` and `finalPayment()` clearly
 
-- `DailyEmployee` has two attributes are daily payment and total days in one month
+- `DailyEmployee` has two attributes are daily payment and total days in one month &rarr; `finalPayment = dailyPayment * totalDays`
 
 ``` c++
 // You can see implementation in "DailyEmployee.cpp"
@@ -59,7 +59,7 @@ public:
 };
 ```
 
-- `HourlyEmployee` has two attributes are hourly payment and total hours in one month
+- `HourlyEmployee` has two attributes are hourly payment and total hours in one month &rarr; `finalPayment = hourlyPayment * totalHours`
 
 ``` c++
 // You can see implementation in "HourlyEmployee.cpp"
@@ -82,7 +82,7 @@ public:
 };
 ```
 
-- `ProductEmployee` has two attributes are payment per product and total products in one month
+- `ProductEmployee` has two attributes are payment per product and total products in one month &rarr; `finalPayment = paymentPerProduct * totalProducts`
 
 ``` c++
 // You can see implementation in "ProductEmployee.cpp"
@@ -105,7 +105,7 @@ public:
 };
 ```
 
-- `Manager` has three attributes, fixed payment, total employees and payment per employee
+- `Manager` has three attributes are fixed payment, total employees and payment per employee &rarr; `finalPayment = fixedPayment + totalEmployee * paymentPerEmployee`
 
 ``` c++
 // You can see implementation in "Manager.cpp"
@@ -131,13 +131,15 @@ public:
 };
 ```
 
-Class to create one `Employee` based on the choice from user
+Class to create one `Employee` based on user's choice
 
-- Using *Factory* design pattern
+- Using *Factory* design pattern for this class to create object
 
-- Using *Singleton* design pattern to make sure that there is only one instance in this Factory
+- Using *Singleton* design pattern to make sure that there is only one instance in this *Factory* design pattern
 
 - Using *Prototype* design pattern to clone new object
+
+- `instance()` will check if there are more than 1 instance, it will return the address that have already created before
 
 - With `create()` function, we create one object depend on data that store in 2 `string` line1 + line2 represent 2 lines of each `Employee`
 
@@ -160,7 +162,7 @@ Class to read data from `November2021.txt` into `vector<shared_ptr<Employee>>`
 
 - Using *Singleton* design pattern to make sure that there is only one instance
 
-- Output of `readAll()` is `vector<shared_ptr<Employee>>` contains all `Employee` in file
+- Output of `readAll()` is `vector<shared_ptr<Employee>>` contains all `Employee` in text file
 
 ``` c++
 // You can see implementation in EmployeeDataReader.cpp"
@@ -190,7 +192,7 @@ public:
     string converter(shared_ptr<Employee>);
 };
 ```
-## **2. Things that can be bonus point**
+## **2. Things that can be considered as bonus point**
 Class that convert one `integer` into a `string` that represent currency
 
 - Input is any `integer` that you want to convert
@@ -209,6 +211,8 @@ public:
 ```
 ## **3. Note**
 When you run the project, you must take text file name `November2021.txt` into the same place as `*.exe`
+
+With using `inline` in `inline static shared_ptr<EmployeeDataReader> _instance = NULL;`, you must set C++ Language Standard into `ISO C++ 17`
 
 Link video demo:
 
