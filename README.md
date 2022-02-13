@@ -215,5 +215,3 @@ When you run the project, you must take text file name `November2021.txt` into t
 With using `inline` in `inline static shared_ptr<EmployeeDataReader> _instance = NULL;`, you must set C++ Language Standard into `ISO C++ 17`
 
 Link video demo: https://youtu.be/Kh-pDY8_HYQ
-
-Expect grade in project 2: 10
